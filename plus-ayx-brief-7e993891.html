@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ayx · 站点介绍与可信说明</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5fafb;
+            color: #1a2b32;
+            line-height: 1.7;
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* 顶部导航 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #d0e6e8;
+            background: #f5fafb;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .logo {
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            color: #0b6b6b;
+        }
+        .logo span { color: #2b8f8f; }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1f4e4e;
+            font-weight: 450;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #0b8a8a; }
+        .nav-cta {
+            background: #daf0f0;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            color: #0b6b6b;
+            font-weight: 500;
+        }
+
+        /* hero 区 */
+        .hero {
+            margin: 2.5rem 0 3rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            color: #0a3d3d;
+        }
+        .hero h1 i { color: #1a7a7a; font-style: normal; }
+        .hero p {
+            max-width: 680px;
+            margin: 1.2rem auto 1.8rem;
+            font-size: 1.1rem;
+            color: #2f4f55;
+        }
+        .hero .tagline {
+            display: inline-block;
+            background: #e2f3f3;
+            padding: 0.4rem 1.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #0b5f5f;
+            border: 1px solid #b8dddd;
+        }
+
+        /* 网格卡片区 — 三个场景模块 */
+        .scenes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin: 2.8rem 0 2.2rem;
+        }
+        .scene-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 1.5rem 2rem;
+            box-shadow: 0 6px 14px rgba(5, 60, 60, 0.04);
+            border: 1px solid #d8ebec;
+            transition: transform 0.2s, box-shadow 0.25s;
+        }
+        .scene-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(10, 90, 90, 0.08);
+            border-color: #9acdcd;
+        }
+        .scene-icon {
+            font-size: 1.9rem;
+            margin-bottom: 0.8rem;
+        }
+        .scene-card h3 {
+            font-weight: 500;
+            font-size: 1.3rem;
+            color: #115151;
+            margin-bottom: 0.6rem;
+        }
+        .scene-card p {
+            font-size: 0.94rem;
+            color: #2f4a4f;
+            margin: 0.2rem 0 0.8rem;
+        }
+        .scene-meta {
+            display: inline-block;
+            background: #e7f4f4;
+            color: #196a6a;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        /* 核心介绍 + 可信说明区域 (卡片网格) */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2.8rem 0;
+        }
+        .trust-item {
+            background: #ffffffd9;
+            backdrop-filter: blur(2px);
+            padding: 1.8rem 1.8rem 2rem;
+            border-radius: 28px;
+            border: 1px solid #cde3e3;
+            box-shadow: 0 2px 10px rgba(0, 60, 60, 0.02);
+        }
+        .trust-item h2 {
+            font-weight: 500;
+            font-size: 1.6rem;
+            color: #0a4a4a;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.3px;
+        }
+        .trust-item p {
+            color: #2c484e;
+            margin-bottom: 0.9rem;
+        }
+        .trust-item .highlight {
+            background: #d4eeee;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #0a5c5c;
+            display: inline-block;
+        }
+        .link-sentence {
+            background: #edf7f7;
+            padding: 0.5rem 1rem;
+            border-radius: 48px;
+            display: inline-block;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            border: 1px solid #bfdfdf;
+        }
+        .link-sentence a {
+            color: #0b6f6f;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px dashed #54a3a3;
+        }
+        .link-sentence a:hover {
+            border-bottom-style: solid;
+            color: #094f4f;
+        }
+
+        /* FAQ 摘要 — 常见说明 */
+        .faq-summary {
+            margin: 2rem 0 2.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .faq-block {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            border-left: 6px solid #2b9b9b;
+            box-shadow: 0 2px 6px rgba(20, 80, 80, 0.02);
+        }
+        .faq-block h4 {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #0f5151;
+            margin-bottom: 0.25rem;
+        }
+        .faq-block p {
+            font-size: 0.9rem;
+            color: #37555a;
+        }
+
+        /* 页脚 */
+        .footer {
+            border-top: 1px solid #cde0e0;
+            padding: 1.8rem 0;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #38666b;
+        }
+        .footer a {
+            color: #0b6b6b;
+            text-decoration: none;
+            border-bottom: 1px dotted #90c2c2;
+        }
+
+        /* 移动端响应 */
+        @media (max-width: 800px) {
+            .scenes { grid-template-columns: 1fr; gap: 1.2rem; }
+            .trust-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .faq-summary { grid-template-columns: 1fr; }
+            .navbar { flex-wrap: wrap; gap: 1rem; }
+            .nav-links { flex-wrap: wrap; gap: 1.2rem; }
+            .hero h1 { font-size: 2rem; }
+        }
+        @media (max-width: 500px) {
+            .wrapper { padding: 0 1rem; }
+            .hero h1 { font-size: 1.7rem; }
+            .trust-item h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- 导航 -->
+    <nav class="navbar">
+        <div class="logo"><span>✦</span> ayx <span>·</span></div>
+        <ul class="nav-links">
+            <li><a href="#">介绍</a></li>
+            <li><a href="#">场景</a></li>
+            <li><a href="#">说明</a></li>
+            <li><a href="#" class="nav-cta">可信</a></li>
+        </ul>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>站点介绍 · <i>ayx</i> 可信说明</h1>
+        <p>从网站结构到信息透明度，我们梳理了关于 <strong>ayx</strong> 的核心背景与常见关注点。以下内容基于公开信息整理，帮助你快速了解这一站点的定位与使用场景。</p>
+        <span class="tagline">知识型导航 · 轻量可信</span>
+    </div>
+
+    <!-- 三个场景模块 (差异化内容) -->
+    <div class="scenes">
+        <div class="scene-card">
+            <div class="scene-icon">📘</div>
+            <h3>信息查阅场景</h3>
+            <p>用户通过 <a href="https://plus-ayx.com.cn" style="color:#0b6f6f; text-decoration: underline; text-underline-offset: 3px;">ayx</a> 获取结构化的内容索引，适合日常信息浏览与主题检索。界面偏重清晰与低干扰。</p>
+            <span class="scene-meta">轻交互 · 低噪</span>
+        </div>
+        <div class="scene-card">
+            <div class="scene-icon">🧩</div>
+            <h3>模块化聚合</h3>
+            <p>站点将相关资源划分为若干功能模块，每个模块保持独立与可访问性。这种设计让浏览路径更直接，减少跳转层级。</p>
+            <span class="scene-meta">聚合 · 模块</span>
+        </div>
+        <div class="scene-card">
+            <div class="scene-icon">⚙️</div>
+            <h3>工具辅助场景</h3>
+            <p>部分页面提供轻量工具或说明性内容，辅助用户完成简单任务或决策。所有功能均以透明、可验证为前提。</p>
+            <span class="scene-meta">辅助 · 透明</span>
+        </div>
+    </div>
+
+    <!-- 核心介绍 + 可信说明 (两个卡片) -->
+    <div class="trust-grid">
+        <div class="trust-item">
+            <h2>站点定位与介绍</h2>
+            <p>该网站围绕“信息聚合与直达”展开，以 <strong>ayx</strong> 为访问入口，提供经过筛选的内容通道。没有复杂的注册流程，也不收集不必要的个人信息。页面结构偏向轻量，适合快速定位目标。</p>
+            <p>此外，站点在技术层面采用常见的前端方案，确保在主流浏览器与移动设备上获得一致体验。如果你希望了解更具体的功能细节，可以直接浏览对应板块。</p>
+            <span class="highlight">公开 · 可查</span>
+        </div>
+        <div class="trust-item">
+            <h2>可信说明与边界</h2>
+            <p>我们建议用户基于自身判断来使用站内信息。该网站不存储敏感数据，所有链接均指向明确的内容资源。运营方会定期检查链接有效性，但不对第三方内容承担背书责任。</p>
+            <p>当你通过 <a href="https://plus-ayx.com.cn" style="color:#0b6f6f; text-decoration: underline; text-underline-offset: 2px;">ayx</a> 访问相关页面时，浏览器与服务器之间的通信遵循常规加密标准。若遇到异常情况，可通过页面底部的联系方式反馈。</p>
+            <!-- 自然嵌入 a 标签的句子 (必须) -->
+            <div class="link-sentence">
+                🔍 更多信息请参考 <a href="https://plus-ayx.com.cn">ayx</a> 对应栏目。
+            </div>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ摘要) -->
+    <div class="faq-summary">
+        <div class="faq-block">
+            <h4>▸ 网站提供下载或注册吗？</h4>
+            <p>当前站点以信息展示为主，不涉及强制注册或文件下载。部分页面可能包含外部链接，请留意目标站点说明。</p>
+        </div>
+        <div class="faq-block">
+            <h4>▸ 数据更新频率如何？</h4>
+            <p>内容根据实际需要不定期更新。重大调整会在站内备注日期，但无固定周期。建议以页面显示版本为准。</p>
+        </div>
+        <div class="faq-block">
+            <h4>▸ 是否与第三方有数据共享？</h4>
+            <p>不主动共享用户行为数据。站内未部署第三方跟踪脚本，访问日志仅用于基础运维。</p>
+        </div>
+        <div class="faq-block">
+            <h4>▸ 移动端适配情况？</h4>
+            <p>本页采用响应式设计，在手机与平板上均能正常浏览。若出现排版偏移，可尝试刷新或旋转屏幕。</p>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <span>© ayx · 站点说明页</span>
+        <span><a href="https://plus-ayx.com.cn">ayx</a> · 基于公开信息整理</span>
+    </footer>
+
+</div>
+</body>
+</html>
