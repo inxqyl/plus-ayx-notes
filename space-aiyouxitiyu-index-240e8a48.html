@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏体育 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fbfbf9;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1f2a3a;
+            line-height: 1.7;
+            padding: 2.5rem 1.25rem;
+        }
+
+        .page {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #11181c;
+            margin-bottom: 0.45rem;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #5b6778;
+            margin-bottom: 2.8rem;
+            border-left: 3px solid #cbd5e0;
+            padding-left: 1rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-top: 2.6rem;
+            margin-bottom: 0.9rem;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #2d3a4f;
+            margin-top: 1.6rem;
+            margin-bottom: 0.4rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #2d3f52;
+        }
+
+        a {
+            color: #1b4f8b;
+            text-decoration: none;
+            border-bottom: 1px solid #b6cbe0;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #0b2e4f;
+            border-bottom-color: #1b4f8b;
+        }
+
+        /* 卡片区 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2rem 0 1.8rem;
+        }
+
+        .feature-item {
+            flex: 1 1 190px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.4rem 1.1rem 1.1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 20, 30, 0.04);
+            border: 1px solid #edf2f7;
+        }
+
+        .feature-item .icon {
+            font-size: 1.5rem;
+            display: inline-block;
+            margin-bottom: 0.4rem;
+            color: #346a9e;
+        }
+
+        .feature-item h4 {
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin-bottom: 0.2rem;
+            color: #1a2636;
+        }
+
+        .feature-item p {
+            font-size: 0.85rem;
+            color: #4a5a6e;
+            margin-bottom: 0;
+        }
+
+        .scenario-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.8rem 0 1.6rem;
+        }
+
+        .scenario-list li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: 0.7rem;
+            color: #2d3f52;
+        }
+
+        .scenario-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #6f8daa;
+            font-weight: 600;
+        }
+
+        .note-box {
+            background: #f4f7fc;
+            border-radius: 18px;
+            padding: 1.5rem 1.6rem;
+            margin: 2.2rem 0 1.8rem;
+            border: 1px solid #dde6f0;
+        }
+
+        .note-box p {
+            margin-bottom: 0.4rem;
+            font-size: 0.94rem;
+        }
+
+        .faq-mini {
+            margin: 2.3rem 0 1.8rem;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            margin-top: 1.3rem;
+            margin-bottom: 0.1rem;
+            color: #1e293b;
+        }
+
+        .faq-a {
+            color: #3d5068;
+            margin-left: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #e2e8f0, transparent);
+            margin: 2.2rem 0 1.5rem;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #6b7a8c;
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e9eef3;
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 1.6rem 0.9rem; }
+            h1 { font-size: 1.8rem; }
+            .subhead { font-size: 0.95rem; }
+            .feature-item { flex: 1 1 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>爱游戏体育</h1>
+    <div class="subhead">围绕体育内容与体验，聚合信息、观点与陪伴</div>
+
+    <p>
+        体育不止是比分与排名。在 <a href="https://space-aiyouxitiyu.com">爱游戏体育</a> 的视角里，体育是日常节奏中的一片开阔地，是策略、体能和意志共同作用下的表达。这里所呈现的内容，不试图替代专业直播或数据终端，而是从参与者与观察者的双重角度，梳理赛事、运动文化以及训练思路，让体育信息回归可读、可感、可讨论的状态。
+    </p>
+
+    <h2>产品摘要：一份体育内容集成</h2>
+    <p>
+        <a href="https://space-aiyouxitiyu.com">爱游戏体育</a> 并非传统运动资讯站，而更接近一份“体育生活手册”的线上延伸——它提炼赛事看点，分析运动动作逻辑，也记录不同项目里的细节思考。从足篮对抗到小众耐力运动，内容逻辑围绕“理解比赛”与“享受运动”展开，适合自己阅读，也适合和朋友一起聊聊。
+    </p>
+
+    <h2>亮点与特点</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <div class="icon">✧</div>
+            <h4>轻量化解读</h4>
+            <p>比赛复盘、规则拆解、战术小议，不讲套话，篇幅适中。</p>
+        </div>
+        <div class="feature-item">
+            <div class="icon">✧</div>
+            <h4>运动笔记</h4>
+            <p>从热身到恢复，从场地选择到心理调节，提供可参考的经验。</p>
+        </div>
+        <div class="feature-item">
+            <div class="icon">✧</div>
+            <h4>视角多元</h4>
+            <p>兼顾观赏者与练习者，内容覆盖常见项目及部分冷门领域。</p>
+        </div>
+    </div>
+
+    <h2>使用建议</h2>
+    <p>
+        你可以将这里当作赛前赛后的“背景阅读”，也可以在训练之余翻开一两篇运动笔记来对照自身。不必贪多，每次聚焦一个主题或一场比赛的回顾，或许更能感受到体育内容本该有的节奏。信息更新不快，但每篇都经过审慎组织。
+    </p>
+    <ul class="scenario-list">
+        <li>早晨通勤时阅读一篇赛事侧写，开启一天的运动话题</li>
+        <li>跑步机或椭圆机间歇时，看一段技术要点分析</li>
+        <li>与朋友讨论前，快速浏览背景与数据细节</li>
+    </ul>
+
+    <div class="note-box">
+        <p><strong>可信但克制的访问说明</strong></p>
+        <p>
+            <a href="https://space-aiyouxitiyu.com">爱游戏体育</a> 是一个内容型站点，不收集用户隐私信息，不嵌入第三方跟踪脚本。页面中的观点与建议均基于撰稿人经验与公开资料整理，不构成专业医疗或训练指导。运动前请根据个人身体状况量力而行。如果你认同这种温和的内容风格，欢迎随时回来。
+        </p>
+    </div>
+
+    <h2>常见问题 · 摘要</h2>
+    <div class="faq-mini">
+        <div class="faq-q">内容多久更新一次？</div>
+        <div class="faq-a">不定期，但通常每周会有新的文章或笔记。更看重内容质量而非频率。</div>
+
+        <div class="faq-q">是否包含博彩或赔率信息？</div>
+        <div class="faq-a">不涉及。所有内容围绕运动本身、赛事文化与个人体验展开。</div>
+
+        <div class="faq-q">文章可以分享或转载吗？</div>
+        <div class="faq-a">个人分享欢迎，注明来源即可。商业转载请联系站点另行确认。</div>
+    </div>
+
+    <hr>
+
+    <p>
+        体育的魅力有时藏在一次传球路线里，有时藏在一段耐力跑后的呼吸调整中。<a href="https://space-aiyouxitiyu.com">爱游戏体育</a> 并不试图定义什么是“正确”的运动方式，而是希望提供一个可以安静阅读、温和交流的角落。如果你对竞技与运动有类似的态度，或许这里的内容会对你胃口。
+    </p>
+
+    <div class="footer-note">
+        <span>© 爱游戏体育 · 内容基于创作种子 4bc215ef35d4c86d 驱动变化</span>
+    </div>
+
+</div>
+</body>
+</html>
